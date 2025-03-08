@@ -6,9 +6,10 @@ interface CardProps {
     shadow?: boolean;
     includeImage?: boolean;
     imageUrl?: string;
+    variant?:string;
 }
 
-const Card = ({ title, body, color, textColor, shadow, includeImage, imageUrl }: CardProps) => {
+const Card = ({ title, body, color, textColor, shadow, includeImage, imageUrl, variant }: CardProps) => {
     return (
         <div
             className="card"
@@ -21,7 +22,7 @@ const Card = ({ title, body, color, textColor, shadow, includeImage, imageUrl }:
                 height: "auto",
                 margin: '1rem 0',
                 fontFamily: 'Roboto',
-                borderRadius: '16px',
+                borderRadius: variant === 'square' ? '0px' : '16px',
                 border: 'solid 1px gray',
                 boxShadow: shadow ? 'rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px' : 'none'
             }}
@@ -30,6 +31,7 @@ const Card = ({ title, body, color, textColor, shadow, includeImage, imageUrl }:
                 includeImage
                 &&
                 <img
+                    style={{borderRadius: variant === 'square' ? '0px' : '16px 16px 0 0'}}
                     className='card-image'
                     src={imageUrl}
                 />
