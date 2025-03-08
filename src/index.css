@@ -1,0 +1,14 @@
+button:hover {
+    cursor: pointer;
+    transition: linear 0.2s;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px !important;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px; 
+    object-fit: cover; 
+    border-radius: 16px 16px 0 0;
+}
