@@ -6,7 +6,7 @@ interface CardProps {
     shadow?: boolean;
     includeImage?: boolean;
     imageUrl?: string;
-    variant?:string;
+    variant?:"square" | "rounded";
 }
 
 const Card = ({ title, body, color, textColor, shadow, includeImage, imageUrl, variant }: CardProps) => {

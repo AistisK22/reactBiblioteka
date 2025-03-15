@@ -2,7 +2,7 @@ export interface ButtonProps {
     label?: string;
     textColor?: string;
     color?: string;
-    variant?: string;
+    variant?: "square" | "rounded";
     size?: string;
     shadow?: boolean;
     onClick?: () => void;
