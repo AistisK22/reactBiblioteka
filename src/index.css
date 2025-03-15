@@ -1,36 +1,97 @@
 button:hover {
-    cursor: pointer;
-    transition: linear 0.2s;
-    opacity: 0.8;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px !important;
+  cursor: pointer;
+  transition: linear 0.2s;
+  opacity: 0.8;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px !important;
 }
 
 .card-image {
-    width: 100%;
-    height: auto;
-    max-height: 250px; 
-    object-fit: cover; 
-    border-radius: 16px 16px 0 0;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .2s ease;
-    background-color: black;
-  }
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.2s ease;
+  background-color: black;
+}
 
-  #img-container:hover .overlay {
-    opacity: .8;
-  }
+#img-container:hover .overlay {
+  opacity: 0.8;
+}
 
-  #img-container:hover{
-    cursor: pointer;
-  }
-  
+#img-container:hover {
+  cursor: pointer;
+}
+
+.menu-bar {
+  background-color: #007bff;
+  padding: 10px;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-item {
+  position: relative;
+  padding: 10px 15px;
+  z-index: 999;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+}
+
+.menu-link:hover {
+  background-color: #0056b3;
+  border-radius: 5px;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 150px;
+  display: block;
+}
+
+.submenu-item {
+  padding: 10px;
+}
+
+.submenu-link {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 10px;
+}
+
+.submenu-link:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
