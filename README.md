@@ -1,54 +1,212 @@
-# React + TypeScript + Vite
+# IceTea UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![preview](icetea-ui/public/preview.png)
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+IceTea UI is a simple modern component library for React Typescript. It provides Avatar, Button, Card and other elements.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install the package via [npm](https://www.npmjs.com/):
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+```sh
+npm install @aiskai/icetea-ui
+```
+
+[React](https://www.npmjs.com/package/react) and [react-dom](https://www.npmjs.com/package/react-dom) should be installed before installing IceTea UI.
+
+```json
+"peerDependencies": {
+  "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+  "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+},
+```
+
+## Components
+
+### Avatar
+
+UI element used to display user profile pictures and initials.
+
+![preview](icetea-ui/public/avatar.png)
+
+Example:
+
+```ts
+import { Avatar } from "@aiskai/icetea-ui";
+
+function App() {
+  return <Avatar shadow includeImage size="large" imageUrl="avatar.png" />;
+}
+
+export default App;
+```
+
+|     Prop     |  Type   |        Possible values         | Default value |          Description          |
+| :----------: | :-----: | :----------------------------: | :-----------: | :---------------------------: |
+|   variant    | string  |     "square" \| "rounded"      |   "rounded"   |      The shape of avatar      |
+|    shadow    | boolean |         true \| false          |     false     |        Avatar's shadow        |
+|    color     | string  |        valid color code        |    "gray"     |       Background color        |
+| includeImage | boolean |         true \| false          |     false     | Includes image in the avatar  |
+|   imageUrl   | string  |           valid url            |       -       | The _src_ attribute for _img_ |
+|     size     | string  | "small" \| "normal" \| "large" |   "normal"    |         Avatar's size         |
+|     text     | string  |          string value          |       -       |         Avatar's text         |
+|  textColor   | string  |        valid color code        |    "black"    |      Avatar's text color      |
+
+### Button
+
+UI element that allows users to trigger an action or event when clicked. It can be customized with different styles, behaviors, and event handlers.
+
+![preview](icetea-ui/public/button.png)
+
+Example:
+
+```ts
+import { Button } from "@aiskai/icetea-ui";
+
+function App() {
+  return <Button label="Submit" onClick={() => console.log("Submitted!")} />;
+}
+
+export default App;
+```
+
+|   Prop    |    Type    |        Possible values         | Default value |           Description           |
+| :-------: | :--------: | :----------------------------: | :-----------: | :-----------------------------: |
+|   label   |   string   |          string value          |       -       |  Text displayed on the button   |
+| textColor |   string   |        valid color code        |    "white"    |       Button's text color       |
+|   color   |   string   |        valid color code        |    "black"    |   Button's background's color   |
+|  variant  |   string   |     "square" \| "rounded"      |   "rounded"   |       The shape of button       |
+|   size    |   string   | "small" \| "normal" \| "large" |   "normal"    |          Button's size          |
+|  shadow   |  boolean   |         true \| false          |     false     |         Button's shadow         |
+|  onClick  | () => void |               -                |       -       | Function called on button click |
+
+### Card
+
+A reusable UI element used to display grouped content in a structured and visually appealing way.
+
+![preview](icetea-ui/public/card.png)
+
+Example:
+
+```ts
+import { Card } from "@aiskai/icetea-ui";
+
+function App() {
+  return (
+    <Card
+      title="Lorem ipsum"
+      includeImage
+      imageUrl={"landscape.png"}
+      body={
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      }
+    />
+  );
+}
+
+export default App;
+```
+
+|     Prop     |  Type   |    Possible values    | Default value |           Description           |
+| :----------: | :-----: | :-------------------: | :-----------: | :-----------------------------: |
+|    title     | string  |     string value      |       -       | Text displayed on card's header |
+|     body     | string  |     string value      |       -       |  Text displayed on card's body  |
+|    color     | string  |   valid color code    |    "gray"     |       Background's color        |
+|  textColor   | string  |   valid color code    |    "white"    |        Card's text color        |
+|    shadow    | boolean |     true \| false     |     false     |          Card's shadow          |
+| includeImage | boolean |     true \| false     |     false     |   Includes image in the card    |
+|   imageUrl   | string  |       valid url       |       -       |  The _src_ attribute for _img_  |
+|   variant    | boolean | "square" \| "rounded" |   "rounded"   |        The shape of card        |
+
+### Divider
+
+UI element used to create visual separation between sections of content.
+
+![preview](icetea-ui/public/divider.png)
+
+Example:
+
+```ts
+import { Divider } from "@aiskai/icetea-ui";
+
+function App() {
+  return <Divider />;
+}
+
+export default App;
+```
+
+|  Prop   |  Type   |         Possible values         | Default value |     Description      |
+| :-----: | :-----: | :-----------------------------: | :-----------: | :------------------: |
+|  color  | string  |        valid color code         |    "gray"     |   Divider's color    |
+| variant | string  | "dotted" \| "solid" \| "dashed" |    "solid"    |   Divider's style    |
+| rounded | boolean |          true \| false          |     false     | The shape of divider |
+|  size   | string  | "small" \| "normal" \| "large"  |   "normal"    |    Divider's size    |
+
+### ImageView
+
+Displays an image thumbnail, and when clicked, it opens a full-sized image with a title overlay.
+
+![preview](icetea-ui/public/image-view.png)
+
+Example:
+
+```ts
+import { ImageView } from "@aiskai/icetea-ui";
+
+function App() {
+  return <ImageView title="Beautiful landscape" imageUrl="landscape.png" />;
+}
+
+export default App;
+```
+
+|   Prop   |  Type  | Possible values | Default value |          Description          |
+| :------: | :----: | :-------------: | :-----------: | :---------------------------: |
+| imageUrl | string |    valid url    |       -       | The _src_ attribute for _img_ |
+|  title   | string |  string value   |       -       |         Image's title         |
+
+### MenuBar
+
+UI element that provides a list of options or actions that a user can select.
+
+![preview](icetea-ui/public/menu.png)
+
+Example:
+
+```ts
+import { MenuBar } from "@aiskai/icetea-ui";
+
+function App() {
+  const menuItems: MenuItem[] = [
+    { label: "Home", link: "/" },
+    {
+      label: "Services",
+      submenu: [
+        { label: "Web Development", link: "/services/web" },
+        { label: "Mobile Apps", link: "/services/mobile" },
+      ],
     },
-  },
-})
+    { label: "About", link: "/about" },
+    { label: "Contact", link: "/contact" },
+  ];
+
+  return <MenuBar items={menuItems} />;
+}
+
+export default App;
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+|   Prop    |    Type    | Possible values  | Default value |    Description     |
+| :-------: | :--------: | :--------------: | :-----------: | :----------------: |
+|  rounded  |  boolean   |  true \| false   |     false     | The shape of menu  |
+|  shadow   |  boolean   |  true \| false   |     false     |   Menu's shadow    |
+|   items   | MenuItem[] |        []        |       -       |    Menu's items    |
+|   color   |   string   | valid color code |   "#007bff"   | Background's color |
+| textColor |   string   | valid color code |    "white"    | Menu's text color  |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## License
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+This project is licensed under the MIT License.
