@@ -1,6 +1,6 @@
 # IceTea UI
 
-![preview](icetea-ui/public/preview.png)
+![preview](https://raw.githubusercontent.com/AistisK22/reactBiblioteka/refs/heads/master/public/preview.png)
 
 ## Introduction
 
@@ -29,7 +29,7 @@ npm install @aiskai/icetea-ui
 
 UI element used to display user profile pictures and initials.
 
-![preview](icetea-ui/public/avatar.png)
+![preview](https://raw.githubusercontent.com/AistisK22/reactBiblioteka/refs/heads/master/public/avatar.png)
 
 Example:
 
@@ -58,7 +58,7 @@ export default App;
 
 UI element that allows users to trigger an action or event when clicked. It can be customized with different styles, behaviors, and event handlers.
 
-![preview](icetea-ui/public/button.png)
+![preview](https://raw.githubusercontent.com/AistisK22/reactBiblioteka/refs/heads/master/public/button.png)
 
 Example:
 
@@ -86,7 +86,7 @@ export default App;
 
 A reusable UI element used to display grouped content in a structured and visually appealing way.
 
-![preview](icetea-ui/public/card.png)
+![preview](https://raw.githubusercontent.com/AistisK22/reactBiblioteka/refs/heads/master/public/card.png)
 
 Example:
 
@@ -124,7 +124,7 @@ export default App;
 
 UI element used to create visual separation between sections of content.
 
-![preview](icetea-ui/public/divider.png)
+![preview](https://raw.githubusercontent.com/AistisK22/reactBiblioteka/refs/heads/master/public/divider.png)
 
 Example:
 
@@ -149,7 +149,7 @@ export default App;
 
 Displays an image thumbnail, and when clicked, it opens a full-sized image with a title overlay.
 
-![preview](icetea-ui/public/image-view.png)
+![preview](https://raw.githubusercontent.com/AistisK22/reactBiblioteka/refs/heads/master/public/image-view.png)
 
 Example:
 
@@ -172,7 +172,7 @@ export default App;
 
 UI element that provides a list of options or actions that a user can select.
 
-![preview](icetea-ui/public/menu.png)
+![preview](https://raw.githubusercontent.com/AistisK22/reactBiblioteka/refs/heads/master/public/menu.png)
 
 Example:
 
